@@ -15,7 +15,7 @@ Given an integer array nums and an integer k, return the number of pairs (i, j) 
 ## The solution(in python):
 
     class Solution:
-        def countKDifference(nums: List[int], k: int) -> int:
+        def countKDifference(self, nums: List[int], k: int) -> int:
             pairs = []  # list of pairs
             for i in nums:  # loop for each elem
               for j in nums: # nested loop for check pairs
