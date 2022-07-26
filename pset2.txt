@@ -1,0 +1,25 @@
+from random import choice
+
+def quicksort(arry):
+    if len(arry) < 2:
+        return arry
+
+    pivot = choice(arry)
+
+    less = [i for i in arry if i < pivot]
+    great = [i for i in arry if i > pivot]
+
+    return quicksort(less) + [pivot] + quicksort(great)
+
+
+
+def minMovesToSeat(seats, students):
+    seats_sorted = quicksort(seats)
+    students_sorted = quicksort(students)
+
+    moves = 0
+
+    for i , j in zip(seats_sorted,students_sorted):
+        moves += abs(i-j)
+
+    return moves
