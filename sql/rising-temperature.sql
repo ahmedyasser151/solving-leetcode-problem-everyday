@@ -1,0 +1,8 @@
+# url of the problem -> https://leetcode.com/problems/rising-temperature/
+# the solution:
+
+select w1.id 
+from weather w1 
+join weather w2
+on datediff(w1.recordDate, w2.recordDate) = 1
+and w1.temperature > w2.temperature;
